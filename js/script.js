@@ -7,7 +7,7 @@ Bonus:
 3- quando il mouse va in hover sullo slider, bloccare l'autoplay e farlo riprendere quando esce
 */
 
-const { createApp } = Vue;
+const { createApp } = Vue
 
 createApp({
   data() {
@@ -57,9 +57,12 @@ createApp({
         }
     },
 
-    clickThumb() {
-        
-    }
+    autoplay() {
+        setInterval(() => {
+        this.next()
+    }, 3000)
+    } 
+
   }
   
 }).mount('#app')
