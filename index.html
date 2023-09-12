@@ -18,7 +18,7 @@
 
     <div id="app">
         <div class="container p-4 text-center">
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" @mouseover="stopAutoplay()">
 
                 <div class="item">
                     <img :src="slides[activeSlide].image" alt="img" />
@@ -41,6 +41,7 @@
 
             </div>
         </div>
+
     </div>
 
 

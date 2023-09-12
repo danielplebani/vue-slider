@@ -40,7 +40,7 @@ createApp({
     activeSlide : 0
 
     }
-},
+  },
 
   methods: {
     prev() {
@@ -58,11 +58,18 @@ createApp({
     },
 
     autoplay() {
-        setInterval(() => {
-        this.next()
-    }, 3000)
-    } 
+        const play = setInterval(() => {
+        this.next();
 
+        stopAutoplay() {
+            clearInterval(play);
+        }
+    }, 3000)
+    }
+  },
+
+  mounted() {
+    this.autoplay()
   }
-  
+
 }).mount('#app')
