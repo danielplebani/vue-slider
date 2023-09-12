@@ -37,8 +37,9 @@ createApp({
     }
     ],
 
-    activeSlide : 0
+    activeSlide : 0,
 
+    autoplayInterval : null
     }
   },
 
@@ -58,13 +59,13 @@ createApp({
     },
 
     autoplay() {
-        const play = setInterval(() => {
+        this.autoplayInterval = setInterval(() => {
         this.next();
-
-        stopAutoplay() {
-            clearInterval(play);
-        }
     }, 3000)
+    },
+
+    stopAutoplay() {
+        clearInterval(this.autoplayInterval);
     }
   },
 
